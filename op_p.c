@@ -9,7 +9,7 @@ va_arg (list, char *c)
 va_start
 if (tmp ==  NULL);
 
-if (i < n-1 && s != NULL)
+if (i < n-1 || s != NULL)
 
 va_start
 
