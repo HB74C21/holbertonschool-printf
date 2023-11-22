@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* op.c - function to print one character
+* op_c - function to print one character
 *
 * @c: The character to print
 *
