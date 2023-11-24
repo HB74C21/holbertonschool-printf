@@ -12,7 +12,5 @@ int print_c(va_list ap)
 
 	letter = va_arg(ap, int);
 
-	write(1, &c, 1);
-
-	return (1);
+	return (_putchar(letter));
 }
