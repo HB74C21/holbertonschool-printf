@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "3-calc.h"
+#include "3-main.h"
 /**
 * get_op_func - get operation for use in 3-main
 * @s: char pointer s
@@ -22,7 +22,8 @@ op_t ops[] = {
 };
 
 i = 0;
-while (ops[i].f != NULL && strcmp(ops[i].op, s) != 0)
+
+while (ops[i].op != NULL && *ops[i].op != *s)
 i++;
 
 return (ops[i].f);

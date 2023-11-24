@@ -1,0 +1,21 @@
+ANUAL
+
+Printf return value
+Printf function is an output function that prints characters to stdout / console / command shell. Printf function returns the number of characters printed to the output file stream(stdout / console / shell).
+
+Printf takes a formatting string and a number of optional arguments. Printf converts these arguments (char, string, int, long, float, double etc) to printable strings and the final constructed string is transferred to the stdout file stream.
+
+
+
+printf– it is the predefined function to display something on the stdout console
+%d– it is the datatype of the variable that is to be displayed.
+variableOfIntegerType– it is the name of the variable that store value that is to be displayed by the printf function.
+General Steps to Print Integer in C:
+Step 1: Start
+Step 2: Declare the variable num.
+Step 3: Read input num from the user or can even initialize on your own. 
+Step 4:While reading the input from the user use scanf() command to store the value in num.
+Step5: To print the value stored in num use printf() command.
+Step 6: As per the syntax use the datatype in-place of any and variable name instead of variableOfAnyType.
+Step 7: The above step would print the value stored in num.
+Step 8: Program end.

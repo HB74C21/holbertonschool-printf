@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 int
-op_c(va_list val)
+op_i(va_list val)
 {
 	va_list op;
 	char str;
