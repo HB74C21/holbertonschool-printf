@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 /**
  * _printf - Function that print all type
  *
@@ -10,42 +8,40 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int j = 0;
-	int count_len = 0;
+	int index_format = 0;
+	int index_ops = 0;
+	int total_lenght = 0;
 
 	va_list ap;
 
 	op_t ops[] = {
-		{"c", print_c},
-		{"s", print_s},
-		{"%", print_percent},
+		{"c", print_char},
 		{NULL, NULL}
 	};
 
 	va_start(ap, format);
 
-	while (format != NULL && format[i] != '\0')
+	while (format != NULL && format[index_format] != '\0')
 	{
-		if (format[i] == '‰')
+		if (format[index_format] == '%')
 		{
-			j = 0;
+			index_ops = 0;
 
-			while (ops[j].op != NULL)
+			while (ops[index_ops].op != NULL)
 			{
-				if (format[i + 1] == ops[j].op)
+				if (format[index_format + 1] == *(ops[index_ops].op))
 				{
-					count_len += ops[j].f(ap);
-					break;
+					total_lenght += ops[index_ops].f(ap);
 				}
-				j++;
+				index_ops++;
 			}
+			index_format++;
 		}
 		else
-			count_len += _putchar(format[i]);
-		i++;
+			total_lenght += _putchar(format[index_format]);
+		index_format++;
 	}
 	va_end(ap);
 
-	return (count_len);
+	return (total_lenght);
 }
