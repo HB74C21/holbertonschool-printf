@@ -8,15 +8,17 @@
 */
 int _printf(const char *format, ...)
 {
+	va_list ap;
+
+	int total_lenght = 0;
+	int found_format = 0;
 	int index_format = 0;
 	int index_ops = 0;
-	int total_lenght = 0;
-
-	va_list ap;
 
 	op_t ops[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 
@@ -33,13 +35,24 @@ int _printf(const char *format, ...)
 				if (format[index_format + 1] == *(ops[index_ops].op))
 				{
 					total_lenght += ops[index_ops].f(ap);
+					found_format = 1;
+					break;
 				}
 				index_ops++;
+			}
+
+			if (!found_format)
+			{
+				_putchar('%');
+				_putchar(format[index_format + 1]);
+				total_lenght += 2;
 			}
 			index_format++;
 		}
 		else
-			total_lenght += _putchar(format[index_format]);
+		{
+			total_lenght +=	_putchar(format[index_format]);
+		}
 		index_format++;
 	}
 	va_end(ap);
