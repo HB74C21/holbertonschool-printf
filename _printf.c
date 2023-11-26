@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 
 	op_t ops[] = {
 		{"c", print_char},
+		{"s", print_string},
 		{NULL, NULL}
 	};
 
