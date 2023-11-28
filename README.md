@@ -1,103 +1,128 @@
-#   Projet _Printf 
+#   Project _Printf 
 
 <h4><u>Description </u>:</h4>
 
- Ce projet implémente une version simplifiée de la fonction `printf` en langage C. La fonction principale, `_printf`, est conçue pour formater et imprimer différents types de données en fonction des spécificateurs de format fournis dans la chaîne d'entrée.
+This project implements a simplified version of the `printf` function in the C language. The main function, `_printf`, is designed to format and print different types of data based on the format specifiers provided in the input string.
 
-_printf function is an output function that prints characters to stdout / console / command shell. _printf function returns the number of characters printed to the output file stream(stdout / console / shell).
+The _printf function is an output function that prints characters to stdout/console/command shell. It returns the number of characters printed to the output file stream (stdout/console/shell).
 
-_printf takes a formatting string and a number of optional arguments. _printf converts these arguments (char, string, int, long, float, double etc) to printable strings and the final constructed string is transferred to the stdout file stream.
+_printf takes a formatting string and a number of optional arguments. It converts these arguments (char, string, int, long, float, double, etc.) to printable strings, and the final constructed string is transferred to the stdout file stream.
 
-The symbol “%” denotes the beginning of a format mark. The mark “%d” is replaced by the value of variable counter and the resulting string is printed. The symbol “\n” represents a new line.
+The symbol % denotes the beginning of a format mark. The mark %d is replaced by the value of the counter variable, and the resulting string is printed. The symbol "\n" represents a new line.
 
-# Type de données
+<br>
 
- | SYMBOLE         | TYPE                      | Format de sortie |
- | :-------------- | :------------------------- | :------|
- | %c                     | int                         | Caractère ASCII correspondant à la valeur entière fournie| 
- |  %s                     | char *	                  | Chaîne de caractères (pointeur vers le premier caractère)|
- | %d                     | int                         | Entier décimal (base 10) |
- |   %i                      | int                         | Entier décimal (base 10), octal (base 8 avec le préfixe 0), hexadécimal (base 16 avec le préfixe 0x) |
- | %%                   | caractere %        | Affiche le caractère %|
+# Data types
 
-# Requirements
+ | SYMBOLE         | TYPE                      |     OUTPUT FORMAT|
+ | -------------- | ---------------- | ---------|
+ |  %s                     | char *	                  | String  (pointer to the first character)|
+ | %d                     | int                         | Decimal integer (base 10) |
+ |   %i                      | int                         | Decimal integer (base 10), octal (base 8 with the prefix 0), hexadecimal (base 16 with the prefix 0x)|
+ | %%                   | caractere %        | Displays the character %
+
+ <br>
+
+ # Requirements
     Environnement Ubuntu 20
     GCC
     Git
-# Fichiers et Structure :<h5>Clic pour plus de details</h5>
--
-<details>
-  <summary>
-  <a href="https://github.com/HB74C21/holbertonschool-printf/blob/develop/_printf.c" target="_blank">
-  <i>1. (_printf.c))</i>
-  </a>
-  </summary>
-  <p>Ce fichier contient l'implémentation de la fonction `_printf`, qui est responsable du traitement des spécificateurs de format et de l'appel des fonctions d'impression correspondantes pour imprimer les types spécifiés.</p>
- </details>
--
-<details><summary>2. [main.h]()</summary>
- - Fichier d'en-tête qui inclut les prototypes de fonction et la définition de la structure `op_t`, associant les spécificateurs de format à leurs fonctions d'impression correspondantes.
- </details>
--
-<details><summary>3. [print_char.c]()</summary>
- - Implémentation de la fonction `print_char`, qui gère le spécificateur `%c` pour imprimer un seul caractère.
- </details>
--
-<details><summary>4. [print_string.c]()</summary>
- - Implémentation de la fonction `print_string`, qui gère le spécificateur `%s` pour imprimer une chaîne de caractères.
- </details>
--
-<details><summary>5. [print_decimal.c]()</summary>
-  - Implémentation de la fonction `print_decimal`, qui gère les spécificateurs `%d` et `%i` pour imprimer des entiers décimaux.
- </details>
--
-<details><summary>6. [print_integer.c]()</summary>
- - Implémentation de la fonction `print_integer`, qui gère les spécificateurs `%d` et `%i` pour imprimer des entiers.
- </details>
--
-<details><summary>7. [print_percent.c]()</summary>
- - Implémentation de la fonction `print_percent`, qui gère le spécificateur `%%` pour imprimer un signe pourcent.
- </details>
--
-<details><summary>8. [print_positive_int.c]()</summary>
- - Implémentation de la fonction `print_positive_int`, une fonction auxiliaire pour imprimer des entiers positifs.
- </details>
--
-<details><summary>9. [_putchar.c]()</summary>
- - Implémentation de la fonction `_putchar`, qui imprime un seul caractère sur la sortie standard.
+
+   <br>
+
+   ## <u>How to use the _printf function in your project</u> :
+
+- Use the <i>Ubuntu 20</i> environment for better functionality and contability
+- Include all files available in the Files and Structure section in your C source code.
+- Use the _printf function in your main.c code by providing a format string and other arguments as needed see main.c example with the result in the part (<i>Manage data types</i>).
+- Use the gcc command provided in the compile command
+
+<br>
+
+***
+<br>
+
+## <u>Files and Structure</u>:
+<h5>Click on each file name for more details</h5>
+
+<details><summary><i>_printf.c</i></summary><br>
+  This file contains the implementation of the _printf.c, function, which is responsible for processing format specifiers and calling the corresponding print functions to print the specified types.<br>
+ Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/_printf.c">File links</a>
  </details>
 
+<details><summary><i>main.h</i></summary> 
+Header file that includes function prototypes and the definition of the op_t structure, associating format specifiers with their corresponding print functions.<br>
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/main.h">File links</a>
+</details>
 
-## Comment utiliser
+<details><summary>print_char.c</summary>
+Implemented the `print_char` function, which handles the `%c` specifier to print a single character. <br>
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/print_char.c">File links</a>
+</details>
 
- 1. Incluez le fichier d'en-tête `main.h` dans votre code source C.
- 2. Implémentez la fonction `_printf` dans votre projet.
- 3. Utilisez la fonction `_printf` dans votre code en fournissant une chaîne de format et d'autres arguments au besoin.
+<details><summary>print_string.c</summary>
+Implemented the `print_string` function, which handles the `%s` specifier to print a character string.<br>
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/print_string.c">File links</a>
+ </details>
 
-## Commande de compilation
+<details><summary>print_decimal.c</summary>
+Implemented the `print_decimal` function, which handles the `%d` and `%i` specifiers to print decimal integers.<br> 
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/print_decimal.c">File links</a>
+</details>
 
- Votre code sera compilé de la manière suivante :
+<details><summary>print_integer.c</summary>
+Implemented the `print_integer` function, which handles the `%d` and `%i` specifiers to print integers.<br> 
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/print_integer.c">File links</a>
+</details>
+
+<details><summary>print_percent.c</summary>
+Implemented the `print_percent` function, which handles the `%%` specifier to print a percent sign. <br>
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/print_percent.c">File links</a>
+</details>
+
+<details><summary>print_positive_int.c</summary>
+Implemented the `print_positive_int` function, an auxiliary function for printing positive integers.<br>
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/print_positive_int.c">File links</a>
+ </details>
+
+<details><summary>_putchar.c</summary>
+Implemented the `_putchar` function, which prints a single character to standard output.<br> 
+Github:  <a href = "https://github.com/HB74C21/holbertonschool-printf/blob/main/_putchar.c">File links</a>
+</details>
+
+<br>
+
+***
+
+<br>
+
+## Compile command
+
+ Your code will be compiled as follows:
  ```bash
  gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o my_printf
 
- la commande pour compiler sera ./my_printf
+ The command to execute the code will be ./my_printf
  ```
 
  <br>
 
 ***
+ 
+ <br>
+
+<h1> Manage data types: </h1>
+
+#### <u>Data type</u>: %c
+
+ <details><summary> <u><i>Click here to show/hide the example concerning %c:</u></i></summary>
+ <br>
+
+ To display the character “A” in uppercase:
 
  <br>
 
-### Type de donnée : %c
- <details><summary> <u><i>Clic ici pour afficher/cacher l'exemple concernant le %c:</u></i></summary>
- <br>
-
- Pour afficher le character "A" en majuscule :
-
- <br>
-
- <u>Exemple de fichier main.c </u>:
+ <u>Example of main.c file</u>:
 
  <br>
 
@@ -116,7 +141,7 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
- Affiche sur le terminal  une fois la compilation et l'execution du code: 
+ Shows on the terminal after compiling and executing the code:
  
  <br>
 
@@ -134,15 +159,16 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
-### Type de donnée : %s 
- <details><summary> <u><i>Clic ici pour afficher/cacher l'exemple concernant le %s:</u></i></summary>
+#### <u>Data type</u>: %s
+
+ <details><summary> <u><i>Click here to show/hide the example concerning %s:</u></i></summary>
  <br>
 
- Pour afficher la phrase "Hello, World!" 
+ To display the phrase "Hello, World!"
 
  <br>
 
- <u>Exemple de fichier main.c</u>:
+ <u>Example of main.c file</u>:
 
  <br>
 
@@ -161,7 +187,7 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
   
   <br>
 
- Affiche sur le terminal  une fois la compilation et l'execution du code: 
+Shows on the terminal after compiling and executing the code:
 
  <br>
 
@@ -179,15 +205,16 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
-### Type de donnée : %d 
- <details><summary> <u><i>Clic ici pour afficher/cacher l'exemple concernant le %d:</u></i></summary>
+#### <u>Data type</u>: %d
+
+ <details><summary> <u><i>Click here to show/hide the example concerning %d:</u></i></summary>
  <br>
  
- Pour afficher le nombre entier "-42"
+ To display the integer "-42"
 
  <br>
 
-  <u>Exemple de fichier main.c </u>:
+  <u>Example of main.c file</u>:
 
   <br>
  
@@ -206,7 +233,7 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
-  Affiche sur le terminal une fois la compilation et l'exécution du code :
+ Shows on the terminal after compiling and executing the code:
 
   <br>
 
@@ -224,15 +251,16 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
-### Type de donnée : %i 
- <details><summary> <u><i>Clic ici pour afficher/cacher l'exemple concernant le %i:</u></i></summary>
+#### <u>Data type</u>: %i
+
+ <details><summary> <u><i>Click here to show/hide the example concerning %i:</u></i></summary>
  <br>
  
- Pour afficher le nombre entier 255 en utilisant sa forme décimale (base 10).
+To display the integer 255 using its decimal form (base 10).
 
  <br>
 
- <u>Exemple de fichier main.c </u>:
+ <u>Example of main.c file</u>:
 
  <br>
 
@@ -252,7 +280,7 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
-  Affiche sur le terminal une fois la compilation et l'exécution du code :
+  Shows on the terminal after compiling and executing the code:
  
  <br>
  
@@ -270,13 +298,13 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
-### Type de donnée %% :
- <details><summary> <u><i>Clic ici pour afficher/cacher l'exemple concernant le %i:</u></i></summary>
+#### <u>Data type</u>: %%
+ <details><summary> <u><i>Click here to show/hide the example concerning %%</u></i></summary>
  <br>
 
- On veut simplement afficher le caractère `%`.
+We simply want to display the character`%`.
 
- <u>Exemple de fichier main.c </u>:
+ <u>Example of main.c file</u>:
 
  <br>
 
@@ -294,7 +322,7 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
 <br>
 
- Affiche sur le terminal une fois la compilation et l'exécution du code :
+Shows on the terminal after compiling and executing the code:
 
  ```bash
  $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o my_printf
@@ -310,9 +338,9 @@ The symbol “%” denotes the beginning of a format mark. The mark “%d” is 
 
  <br>
 
- ### Authors of project _printf :
+ ## Authors of project _printf :
 
- Santos Nascimento Néia  & Bouabdallah Hocine : 
+ Bouabdallah Hocine  & Santos Nascimento Néia
 
  version 1.0
 

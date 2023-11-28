@@ -1,0 +1,78 @@
+.TH man_3_printf 3 "November 2023" "version 1.0"
+.SH NAME
+
+_printf \- format and print data
+
+.SH SYNOPSIS
+
+.B #include <main.h>
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+
+The \fB_printf\fR function prints formatted output to the standard output. It is a custom implementation of the standard C library function \fBprintf\fR.
+.PP
+The format string may contain format specifiers introduced by the '%' character. Each specifier begins with '%' and is followed by a conversion character. The supported format specifiers are:
+.PP
+.TP
+\fB%c\fR
+Prints a character.
+.TP
+\fB%s\fR
+Prints a string.
+.TP
+\fB%%\fR
+Prints a percent sign.
+.TP
+\fB%d\fR, \fB%i\fR
+Prints a signed decimal integer.
+.TP
+
+.SH RETURN VALUE
+Upon successful completion, the \fB_printf\fR function returns the number of characters printed (excluding the null byte used to end output to strings).
+.PP
+If an output error is encountered, a negative value is returned.
+.PP
+Note: Additional format specifiers may be added in future versions of this implementation.
+
+.SH FORMAT SPECIFIERS
+
+The following format specifiers are supported by \fB_printf\fR:
+.PP
+.TP
+\fB%s\fR
+Prints a string. If the string is longer than 80 characters, it will be truncated.
+.TP
+\fB%f\fR
+Prints a floating-point number with two decimal places.
+
+.SH EXAMPLES
+ #include <stdio.h>
+ #include <main.h>
+ /**
+  * main - Entry point
+  *
+  * Return: Always (0) success
+ */
+ int main(void)
+ {
+     _printf("Hello, %s! The answer is %d%%.\n", "world", 42);
+     return 0;
+ }
+
+.SH ERRORS
+
+The \fB_printf\fR function does not set \fBerrno\fR; consequently, there is no reliable way to check for errors.
+
+.SH NOTES
+
+This implementation of \fB_printf\fR is intended for educational purposes and may not be suitable for all use cases.
+
+.SH SEE ALSO
+
+\fBputchar(3)\fR, \fBva_arg(3)\fR, \fBwrite(2)\fR.
+
+.SH AUTHOR
+
+Bouabdallah Hocine & Néia Santos Nascimento
+
